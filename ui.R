@@ -11,8 +11,22 @@ names(citiesVector) = c(paste0(as.character(WorldCities$city), ", ",
 losAngeles <- 1526 # a sensible default :-)
 
 shinyUI(fluidPage(
+  tags$head(
+    tags$style(HTML("
+      .span8, .well {
+        opacity: .9 
+      }
+
+    "))),
+    
+  HTML('<div style="position: fixed; left: 0px; z-index: -99; width: 100%; height: 100%">
+  <iframe frameborder="0" height="100%" width="100%" 
+    src="https://youtube.com/embed/i1PuIdTIZJo?autoplay=1&controls=0&showinfo=0&autohide=1&rel=0">
+  </iframe>
+</div>'),
+
   # Application title
-  titlePanel("Sunsets in Google Calendar using R (redux)"),
+  titlePanel(wellPanel("Sunsets in Google Calendar using R (redux)")),
 
   # Sidebar with a slider input for number of bins
   sidebarLayout(
@@ -28,7 +42,7 @@ shinyUI(fluidPage(
     ),
 
     # Show a plot of the generated distribution
-    mainPanel(
+    mainPanel(wellPanel(
 HTML('<h1>About</h1><p>This application builds a CSV of Sunset times, ready to be
       inported into <a href="http://calendar.google.com">Google Calendar.</a></p>
       <p>This is a simple shiny app written by <a href="http://DataScience.LA/team/#earino">Eduardo Ariño de la Rubia</a>.
@@ -42,7 +56,7 @@ HTML('<h1>About</h1><p>This application builds a CSV of Sunset times, ready to b
       folks at <a href="http://rstudio.org">RStudio</a> and their awesome <a href="https://www.shinyapps.io/">ShinyApps.io</a>
       shiny hosting service. I was able to throw a Shiny app for anyone to use
       in about 15 minutes during lunch.<p>
-      <iframe width="560" height="315" src="//www.youtube.com/embed/WywAU9BViL4" frameborder="0" allowfullscreen></iframe>
+
       <h1>How to use?</h1>
       <p>I will again direct you to <a href="http://hilaryparker.com/2014/05/27/sunsets-in-google-calendar-using-r/">Hilary\'s post</a> regarding how you actually get
       this file ingested by Google Calendar. However, to actually generate the
@@ -51,11 +65,11 @@ HTML('<h1>About</h1><p>This application builds a CSV of Sunset times, ready to b
       want a file generated for.</p>
       <p>Enjoy!</p>
       <h1>Inspiration</h1>
-      <p>I captured the sunset in the above video with my beautiful wife <a href="http://DataScience.LA/team/#leigh">Leigh</a> 
+      <p>I captured the sunset in the video with my beautiful wife <a href="http://DataScience.LA/team/#leigh">Leigh</a> 
       in Santa Monica on the Winter Solstice in 2014. After seeing such a beautiful
       sunset, we decided that we should see more of them in the coming year, so I
       did what any Data Scientist would do... I stole some code from someone way
       smarter than me and built a this little tool :-)</p>')
-    )
+    ))
   )
 ))
