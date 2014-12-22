@@ -7,9 +7,15 @@
 
 library(shiny)
 
-WorldCities <- read.csv("WorldCities.csv", colClasses=c("character", "character", "numeric", "numeric"))
-j <- 1:nrow(WorldCities)
-names(j) = c(paste0(as.character(WorldCities$city), ", ", as.character(WorldCities$country)))
+WorldCities <- read.csv("WorldCities.csv", 
+                        colClasses=c("character", "character", 
+                                     "numeric", "numeric"))
+
+citiesVector <- 1:nrow(WorldCities)
+names(citiesVector) = c(paste0(as.character(WorldCities$city), ", ", 
+                               as.character(WorldCities$country)))
+
+losAngeles <- 1526
 
 shinyUI(fluidPage(
 
@@ -23,7 +29,7 @@ shinyUI(fluidPage(
                   "Timezone:", 
                   choices = OlsonNames(), 
                   selected = "US/Pacific"),
-      selectInput("city", "City: ", choices = j, selected=1526),
+      selectInput("city", "City: ", choices = citiesVector, selected=losAngeles),
       dateInput("start_date", "Start Date: ", 
                 value = "2014/12/22", 
                 format = "yyyy/mm/dd"),
@@ -39,7 +45,9 @@ shinyUI(fluidPage(
 
     # Show a plot of the generated distribution
     mainPanel(
-HTML('<h1>About</h1><p>This is a simple shiny app written by <a href="http://DataScience.LA/team/#earino">Eduardo Ariño de la Rubia</a>.
+HTML('<h1>About</h1><p>This application builds a CSV of Sunset times, ready to be
+inported into <a href="http://calendar.google.com">Google Calendar.</a></p>
+<p>This is a simple shiny app written by <a href="http://DataScience.LA/team/#earino">Eduardo Ariño de la Rubia</a>.
 There is almost no real work in this app, and all the real work was done by 
      <a href="http://hilaryparker.com/">Hilary Parker</a> in her blog post
      <a href="http://hilaryparker.com/2014/05/27/sunsets-in-google-calendar-using-r/">Sunsets in Google Calendar using R</a>.

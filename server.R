@@ -8,24 +8,9 @@
 library(shiny)
 library(StreamMetabolism)
 
-#' Create a sunset calendar
-#'
-#' This function creates a .CSV of sunset appointments--with a user-specified location--that can be imported into Google Calendar. 
-#' @param date Date at which you want the calendar to start, in yyyy/mm/dd format.
-#' @param lat Latitude of location (for sunset time calculation)
-#' @param long Longitude of location (for sunset time calculation, will be negative for continental US)
-#' @param timezone Timezone of location (for sunset time calculation). 
-#' @param num.days Number of days you want sunset appointments for.
-#' @param file Filename for outputted .CSV file (to be uploaded to Google Calendar).
-#' @param location Location of sunset appointment. Will be input into Google Calendar event as the event location.
-#' @importFrom StreamMetabolism sunrise.set
-#' @export
-#' @examples \dontrun{
-#' create_sunset_cal(location = "40.7127, -74.0059")
-#'}
-#' 
-
-WorldCities <- read.csv("WorldCities.csv", colClasses=c("character", "character", "numeric", "numeric"))
+WorldCities <- read.csv("WorldCities.csv", 
+                        colClasses=c("character", "character", 
+                                     "numeric", "numeric"))
 
 shinyServer(function(input, output) {
 
@@ -35,6 +20,8 @@ shinyServer(function(input, output) {
     # This function should write data to a file given to it by
     # the argument 'file'.
     content = function(file) {
+      # code by Hilary Parker, original available:
+      # https://github.com/hilaryparker/Hilary/blob/master/R/create_sunset_cal.R
       date=input$start_date
       
       lat = WorldCities[input$city, "lat"]
@@ -98,6 +85,4 @@ shinyServer(function(input, output) {
       ) 
     }
   )
-  
-
 })
