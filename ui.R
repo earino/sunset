@@ -43,6 +43,7 @@ HTML('<h1>About</h1><p>This is a simple shiny app written by <a href="http://Dat
 There is almost no real work in this app, and all the real work was done by 
      <a href="http://hilaryparker.com/">Hilary Parker</a> in her blog post
      <a href="http://hilaryparker.com/2014/05/27/sunsets-in-google-calendar-using-r/">Sunsets in Google Calendar using R</a>.
+     The github repository for this code is <a href="https://github.com/earino/sunset">here</a>.
      </p>
      <p>I wanted to share this with some non-technical friends, and unfortunately
      simply installing and using R was a bridge too far. So, thanks to the fine
