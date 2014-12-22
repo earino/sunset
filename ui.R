@@ -50,6 +50,7 @@ There is almost no real work in this app, and all the real work was done by
      folks at <a href="http://rstudio.org">RStudio</a> and their awesome <a href="https://www.shinyapps.io/">ShinyApps.io</a>
      shiny hosting service. I was able to throw a Shiny app for anyone to use
      in about 15 minutes during lunch.<p>
+     <iframe width="560" height="315" src="//www.youtube.com/embed/WywAU9BViL4" frameborder="0" allowfullscreen></iframe>
      <h1>How to use?</h1>
      <p>I will again direct you to <a href="http://hilaryparker.com/2014/05/27/sunsets-in-google-calendar-using-r/">Hilary\'s post</a> regarding how you actually get
       this file ingested by Google Calendar. However, to actually generate the
@@ -62,8 +63,7 @@ There is almost no real work in this app, and all the real work was done by
      in Santa Monica on the Winter Solstice in 2014. After seeing such a beautiful
      sunset, we decided that we should see more of them in the coming year, so I
      did what any Data Scientist would do... I stole some code from someone way
-     smarter than me and built a this little tool :-)</p>
-     <iframe width="560" height="315" src="//www.youtube.com/embed/WywAU9BViL4" frameborder="0" allowfullscreen></iframe>')
+     smarter than me and built a this little tool :-)</p>')
     )
   )
 ))
