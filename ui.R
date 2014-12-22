@@ -21,12 +21,13 @@ shinyUI(fluidPage(
     
   HTML('<div style="position: fixed; left: 0px; z-index: -99; width: 100%; height: 100%">
   <iframe frameborder="0" height="100%" width="100%" 
-    src="https://youtube.com/embed/i1PuIdTIZJo?autoplay=1&controls=0&showinfo=0&autohide=1&rel=0">
+    src="https://youtube.com/embed/i1PuIdTIZJo?autoplay=1&controls=0&loop=1&showinfo=0&autohide=1&rel=0">
   </iframe>
 </div>'),
 
   # Application title
-  titlePanel(wellPanel("Sunsets in Google Calendar using R (redux)")),
+  titlePanel(wellPanel("Sunsets in Google Calendar using R (redux)"),
+             "Sunsets in Google Calendar using R (redux)"),
 
   # Sidebar with a slider input for number of bins
   sidebarLayout(
