@@ -36,7 +36,7 @@ shinyUI(fluidPage(
                   selected = "US/Pacific"),
       selectInput("city", "City: ", choices = citiesVector, 
                   selected=losAngeles),
-      dateInput("start_date", "Start Date: ", value = "2014/12/22", 
+      dateInput("start_date", "Start Date: ", value = format(Sys.Date(), "%Y/%m/%d"), 
                 format = "yyyy/mm/dd"),
       sliderInput("num_days", "Number of Days: ", min = 1, max = 365, value=365),
       downloadButton('downloadData', 'Download')
